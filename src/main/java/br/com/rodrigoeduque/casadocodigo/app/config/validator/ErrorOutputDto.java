@@ -2,9 +2,9 @@ package br.com.rodrigoeduque.casadocodigo.app.config.validator;
 
 public class ErrorOutputDto {
 
-  private String timestamp;
-  private String campo;
-  private String mensagem;
+  private final String timestamp;
+  private final String campo;
+  private final String mensagem;
 
   public ErrorOutputDto(String timestamp, String campo, String mensagem) {
     this.timestamp = timestamp;

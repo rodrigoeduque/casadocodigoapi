@@ -12,10 +12,10 @@ public class Autor {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  private String nome;
-  private String email;
-  private String descricao;
-  private LocalDateTime instanteCriacao;
+  private final String nome;
+  private final String email;
+  private final String descricao;
+  private final LocalDateTime instanteCriacao;
 
 
   public Autor(String nome, String email, String descricao) {

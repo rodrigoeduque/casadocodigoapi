@@ -1,4 +1,4 @@
-package br.com.rodrigoeduque.casadocodigo.app.autor;
+package br.com.rodrigoeduque.casadocodigo.app.categoria;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,19 +12,18 @@ import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
-@RequestMapping(value = "/api")
-public class AutorControler {
-
+@RequestMapping("/api")
+public class CategoriaController {
   @Autowired
-  private AutorRepository repository;
+  private CategoriaRepository repository;
 
-  @PostMapping(value = "/autores")
-  public ResponseEntity<Autor> novoAutor(@RequestBody @Valid NovoAutorRequest request) {
+  @PostMapping("/categorias")
+  public ResponseEntity<Categoria> novaCategoria(@RequestBody @Valid NovaCategoriaRequest request) {
 
-    Autor autor = request.toModel();
-    repository.save(autor);
+    Categoria categoria = request.toModel();
+    repository.save(categoria);
 
-    URI uri = UriComponentsBuilder.fromPath("/categorias/{id}").buildAndExpand(autor.getId()).toUri();
+    URI uri = UriComponentsBuilder.fromPath("/categorias/{id}").buildAndExpand(categoria.getId()).toUri();
     return ResponseEntity.created(uri).build();
   }
 }

@@ -12,8 +12,12 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface UniqueValue {
   String message() default "Valor já existente";
+
   Class<?>[] groups() default {};
+
   Class<? extends Payload>[] payload() default {};
+
   String fieldName();
+
   Class<?> domainClass();
 }
