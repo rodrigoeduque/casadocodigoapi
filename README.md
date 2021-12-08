@@ -9,4 +9,4 @@ Tecnologia:
 * Docker
 * MySql
 
-*Versão - 0.0.2*
+*Versão - 0.0.4*
