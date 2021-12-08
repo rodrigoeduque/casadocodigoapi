@@ -1,5 +1,7 @@
 package br.com.rodrigoeduque.casadocodigo.app.autor;
 
+import br.com.rodrigoeduque.casadocodigo.app.config.validator.anotation.UniqueValue;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -10,6 +12,7 @@ public class NovoAutorRequest {
   private String nome;
   @NotBlank
   @Email
+  @UniqueValue(domainClass = Autor.class,fieldName = "email",message = "Este e-mail já foi cadastrado anteriormente")
   private String email;
   @NotBlank
   @Size(max = 400)
